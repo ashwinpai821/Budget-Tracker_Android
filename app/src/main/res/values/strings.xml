@@ -6,4 +6,24 @@
     <string name="target_value">5000</string>
     <string name="add_new_goal">Add new goal!</string>
     <string name="progress">Well done! You are on Track</string>
+    <string name="title_activity_login_page">LoginPage</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="title">Smart Budget Tracker</string>
+    <string name="username">Username</string>
+    <string name="login">LOG-IN</string>
+    <string name="password">Password</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="forgot_your_password">Forgot your password ?</string>
+    <string name="blogin">Login</string>
+    <string name="dont_have_an_account">Dont have an account?</string>
+    <string name="sign_up"><u>Sign-up</u></string>
+    <string name="tip_try_to_save_200_this_week">Tip: Try to save 200 this week</string>
+    <string name="balance_10_000">Balance 10,000</string>
+    <string name="your_progress">Your Progress</string>
+    <string name="your_target">Your Target</string>
 </resources>
