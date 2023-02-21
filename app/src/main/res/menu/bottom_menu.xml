@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home" android:id="@+id/bnav_home" android:icon="@drawable/baseline_home_24"/>
+    <item android:title="Logs" android:id="@+id/bnav_logs" android:icon="@drawable/baseline_logs"/>
+    <item android:title="null" android:enabled="false"/>
+    <item android:title="Statistics" android:id="@+id/bnav_statistics" android:icon="@drawable/baseline_statistics"/>
+    <item android:title="Settings" android:id="@+id/bnav_settings" android:icon="@drawable/baseline_settings"/>
+</menu>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Smart Budget Tracker</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="target">Target</string>
+    <string name="target_value">5000</string>
+    <string name="add_new_goal">Add new goal!</string>
+    <string name="progress">Well done! You are on Track</string>
+</resources>
