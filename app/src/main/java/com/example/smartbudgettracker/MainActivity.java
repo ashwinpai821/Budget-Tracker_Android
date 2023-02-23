@@ -6,16 +6,26 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.smartbudgettracker.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
+    private Button I_E;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
         bottomNavigationView.setBackground(null);
+        FloatingActionButton addB = findViewById(R.id.add);
+        addB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createDialog();
+            }
+        });
+
 
     }private void replaceFragment(Fragment fragment)
     {
@@ -52,4 +70,13 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+
+    public void createDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View Popup=getLayoutInflater().inflate(R.layout.popup,null);
+         dialogBuilder.setView(Popup);
+         dialog=dialogBuilder.create();
+
+         dialog.show();
+    }
 }
