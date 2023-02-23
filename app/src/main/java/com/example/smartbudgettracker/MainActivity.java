@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
-
         bottomNavigationView.setBackground(null);
 
     }private void replaceFragment(Fragment fragment)
