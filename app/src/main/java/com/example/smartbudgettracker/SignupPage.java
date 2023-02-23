@@ -28,8 +28,7 @@ public class SignupPage extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         username=findViewById(R.id.e1);
         password=findViewById(R.id.e2);
-
-
+        signup_button=findViewById(R.id.signup_button);
        signup_button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -39,25 +38,23 @@ public class SignupPage extends AppCompatActivity {
 
                if(user.isEmpty()){
                    username.setError("Username cannot be empty");
-           }
+                }
                if(pass.isEmpty()){
                    password.setError("Password cannot be empty");
-               }else{
+                }
+               else{
                    auth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                        @Override
                        public void onComplete(@NonNull Task<AuthResult> task) {
                            if(task.isSuccessful()){
-                               Toast.makeText(SignupPage.this,"SIGNUP SUCCESSFUL",Toast.LENGTH_SHORT).show();
+                               Toast.makeText(SignupPage.this,"SIGN-UP SUCCESSFUL",Toast.LENGTH_SHORT).show();
                                startActivity(new Intent(SignupPage.this,LoginPage.class));
                            }else{
-                               Toast.makeText(SignupPage.this,"SIGNUP FAILED"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                               Toast.makeText(SignupPage.this,"SIGN-UP FAILED"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
 
                            }
                        }
                    });
                }
        }});
-
-
-
     }}

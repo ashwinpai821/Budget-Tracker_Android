@@ -46,14 +46,14 @@ public class LoginPage extends AppCompatActivity {
                        auth.signInWithEmailAndPassword(usernamee,passwordd).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                            @Override
                            public void onSuccess(AuthResult authResult) {
-                               Toast.makeText(LoginPage.this,"LOGIN SUCCESSFUL",Toast.LENGTH_SHORT).show();
+                               Toast.makeText(LoginPage.this,"LOG-IN SUCCESSFUL",Toast.LENGTH_SHORT).show();
                                startActivity(new Intent(LoginPage.this,MainActivity.class));
                                finish();
                            }
                        }).addOnFailureListener(new OnFailureListener() {
                            @Override
                            public void onFailure(@NonNull Exception e) {
-                               Toast.makeText(LoginPage.this,"LOGIN FAILED",Toast.LENGTH_SHORT).show();
+                               Toast.makeText(LoginPage.this,"LOG-IN FAILED",Toast.LENGTH_SHORT).show();
                            }
                        });
                    }else{
