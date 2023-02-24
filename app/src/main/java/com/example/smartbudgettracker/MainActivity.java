@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         final View Popup=getLayoutInflater().inflate(R.layout.popup,null);
          dialogBuilder.setView(Popup);
          dialog=dialogBuilder.create();
-
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
          dialog.show();
     }
 }
