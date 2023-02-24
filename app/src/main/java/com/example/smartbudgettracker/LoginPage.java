@@ -38,42 +38,44 @@ public class LoginPage extends AppCompatActivity {
        loginbutton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               String usernamee = login_username.getText().toString();
-               String passwordd=login_password.getText().toString();
+               startActivity(new Intent(LoginPage.this,MainActivity.class));
 
-               if(!usernamee.isEmpty()){
-                   if(!passwordd.isEmpty()){
-                       auth.signInWithEmailAndPassword(usernamee,passwordd).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                           @Override
-                           public void onSuccess(AuthResult authResult) {
-                               Toast.makeText(LoginPage.this,"LOG-IN SUCCESSFUL",Toast.LENGTH_SHORT).show();
-                               startActivity(new Intent(LoginPage.this,MainActivity.class));
-                               finish();
-                           }
-                       }).addOnFailureListener(new OnFailureListener() {
-                           @Override
-                           public void onFailure(@NonNull Exception e) {
-                               Toast.makeText(LoginPage.this,"LOG-IN FAILED",Toast.LENGTH_SHORT).show();
-                           }
-                       });
-                   }else{
-                       login_password.setError("Password cannot be Empty");
-                   }
-
-               } else if (usernamee.isEmpty()) {
-                   login_username.setError("Username cannot be Empty");
-
-               }else {
-                   login_username.setError("Enter valid username");
-               }
-           }
-       });
-
-          Signup.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                  startActivity(new Intent(LoginPage.this,SignupPage.class));
-              }
-          });
-    }
-}
+//               String usernamee = login_username.getText().toString();
+//               String passwordd=login_password.getText().toString();
+//
+//               if(!usernamee.isEmpty()){
+//                   if(!passwordd.isEmpty()){
+//                       auth.signInWithEmailAndPassword(usernamee,passwordd).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                           @Override
+//                           public void onSuccess(AuthResult authResult) {
+//                               Toast.makeText(LoginPage.this,"LOG-IN SUCCESSFUL",Toast.LENGTH_SHORT).show();
+//                               startActivity(new Intent(LoginPage.this,MainActivity.class));
+//                               finish();
+//                           }
+//                       }).addOnFailureListener(new OnFailureListener() {
+//                           @Override
+//                           public void onFailure(@NonNull Exception e) {
+//                               Toast.makeText(LoginPage.this,"LOG-IN FAILED",Toast.LENGTH_SHORT).show();
+//                           }
+//                       });
+//                   }else{
+//                       login_password.setError("Password cannot be Empty");
+//                   }
+//
+//               } else if (usernamee.isEmpty()) {
+//                   login_username.setError("Username cannot be Empty");
+//
+//               }else {
+//                   login_username.setError("Enter valid username");
+//               }
+//           }
+//       });
+//
+//          Signup.setOnClickListener(new View.OnClickListener() {
+//              @Override
+//              public void onClick(View view) {
+//                  startActivity(new Intent(LoginPage.this,SignupPage.class));
+//              }
+//          });
+           }});
+}}

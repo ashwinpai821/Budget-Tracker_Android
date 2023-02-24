@@ -1,7 +1,11 @@
 package com.example.smartbudgettracker;
 
+import android.app.AlertDialog;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,8 +54,11 @@ public class HomeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
     LineChart lineChart;
     ArrayList<Entry> dataSet;
+    CardView add_new_goal;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +84,7 @@ public class HomeFragment extends Fragment {
         dataSet.add(new Entry(27,5250));
 
 
+
     }
 
     @Override
@@ -93,6 +101,23 @@ public class HomeFragment extends Fragment {
         lineData.setValueTextSize(14);
         lineChart.setData(lineData);
         lineChart.invalidate();
+        add_new_goal = v.findViewById(R.id.add_new_goal);
+        add_new_goal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createDialog(view);
+            }
+        });
         return v;
+
+    }
+    public void createDialog(View view){
+        dialogBuilder = new AlertDialog.Builder(view.getContext());
+        final View Popup=getLayoutInflater().inflate(R.layout.add_popup,null);
+        dialogBuilder.setView(Popup);
+        dialog=dialogBuilder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
     }
 }

@@ -23,9 +23,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     private Button I_E;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 createDialog();
             }
         });
+
+
 
 
     }private void replaceFragment(Fragment fragment)
