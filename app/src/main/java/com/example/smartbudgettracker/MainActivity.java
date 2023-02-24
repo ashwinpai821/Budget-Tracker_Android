@@ -23,8 +23,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-    private AlertDialog.Builder dialogBuilder;
-    private AlertDialog dialog;
+
+
     private Button I_E;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +54,6 @@ public class MainActivity extends AppCompatActivity {
         });
         bottomNavigationView.setBackground(null);
         FloatingActionButton addB = findViewById(R.id.add);
-        addB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createDialog();
-            }
-        });
 
 
     }private void replaceFragment(Fragment fragment)
@@ -71,12 +65,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void createDialog(){
-        dialogBuilder = new AlertDialog.Builder(this);
-        final View Popup=getLayoutInflater().inflate(R.layout.popup,null);
-         dialogBuilder.setView(Popup);
-         dialog=dialogBuilder.create();
 
-         dialog.show();
-    }
 }
