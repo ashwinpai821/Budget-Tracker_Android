@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "845609916567",
+    "project_id": "smart-budget-tracker-login",
+    "storage_bucket": "smart-budget-tracker-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845609916567:android:b9495c38071b33603831d2",
+        "android_client_info": {
+          "package_name": "com.example.smartbudgettracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845609916567-t6the2eusjoqgckq3huctdakeu0rnujj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartbudgettracker",
+            "certificate_hash": "d65c9fa3ab610d5fd4a551ecdd4e8feafa275064"
+          }
+        },
+        {
+          "client_id": "845609916567-sg7fjcrljmvesblsfveotqoo2se40cpj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxP9SvwVBzwG7D1XyhoYfHd2a3EtBKHAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845609916567-sg7fjcrljmvesblsfveotqoo2se40cpj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
