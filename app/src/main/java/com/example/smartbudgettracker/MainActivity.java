@@ -1,13 +1,16 @@
 package com.example.smartbudgettracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.smartbudgettracker.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
 
     private AlertDialog.Builder dialogBuilder;
-    private AlertDialog dialog;
+    private Dialog dialog;
     private Button I_E;
-
+    TextView income,expense;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,12 +80,32 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void createDialog(){
-        dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder = new AlertDialog.Builder(new customDialogue(this).getContext());
         final View Popup=getLayoutInflater().inflate(R.layout.popup,null);
          dialogBuilder.setView(Popup);
          dialog=dialogBuilder.create();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
          dialog.show();
+         income = Popup.findViewById(R.id.incometext);
+         expense=Popup.findViewById(R.id.expensetext);
+         income.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 income.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.our_green));
+                 income.setText(R.string.IncomeUnderline);
+                 expense.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.white));
+                 expense.setText(R.string.Expense);
+             }
+         });
+        expense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                expense.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.our_red));
+                expense.setText(R.string.ExpneseUnderline);
+                income.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.white));
+                income.setText(R.string.Income);
+            }
+        });
+
 
     }
 }

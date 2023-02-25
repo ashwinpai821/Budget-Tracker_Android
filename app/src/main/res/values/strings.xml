@@ -26,8 +26,10 @@
     <string name="balance_10_000">Balance 10,000</string>
     <string name="your_progress">Your Progress</string>
     <string name="your_target">Your Target</string>
-    <string name="Income"><b>Income</b></string>
-    <string name="Expense"><b>Expense</b></string>
+    <string name="Income">Income</string>
+    <string name="IncomeUnderline"><u><b>Income</b></u></string>
+    <string name="Expense">Expense</string>
+    <string name="ExpneseUnderline"><u><b>Expense</b></u></string>
     <string name="select_category">Select Category</string>
     <string name="brings_the_category_topdown">BRINGS THE CATEGORY TOPDOWN</string>
     <string name="date_time"><![CDATA[Date & Time]]></string>

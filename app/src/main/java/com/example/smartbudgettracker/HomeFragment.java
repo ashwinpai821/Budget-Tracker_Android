@@ -118,6 +118,13 @@ public class HomeFragment extends Fragment {
         dialog=dialogBuilder.create();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
+        String a="";
+//         dialog.getButton(R.id.add_money_button).setOnClickListener(new View.OnClickListener() {
+//             @Override
+//             public void onClick(View view) {
+//                dialog.
+//             }
+//         });
 
     }
 }
