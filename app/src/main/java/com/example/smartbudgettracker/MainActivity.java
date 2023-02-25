@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void createDialog(){
-        dialogBuilder = new AlertDialog.Builder(new customDialogue(this).getContext());
+        dialogBuilder = new AlertDialog.Builder(this);
         final View Popup=getLayoutInflater().inflate(R.layout.popup,null);
          dialogBuilder.setView(Popup);
          dialog=dialogBuilder.create();
