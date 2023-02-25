@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,11 +55,13 @@ public class HomeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    LineChart lineChart;
-    ArrayList<Entry> dataSet;
-    CardView add_new_goal;
+    private LineChart lineChart;
+    private ArrayList<Entry> dataSet;
+    private CardView add_new_goal;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

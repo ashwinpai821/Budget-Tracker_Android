@@ -55,6 +55,7 @@
                 android:backgroundTint="@color/black"/>
 
             <GridLayout
+                android:id="@+id/add_money_grid"
                 android:paddingBottom="20dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
