@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
          date_text=Popup.findViewById(R.id.date_time_text);
          selectcat_layout = Popup.findViewById(R.id.selectcat);
 //         selectcat_text=Popup.findViewById(R.id.selectcategory);
-         selectcat_spinner=Popup.findViewById(R.id.category_spinner);
+         selectcat_spinner=(Spinner) Popup.findViewById(R.id.category_spinner);
 
 
          income.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +149,10 @@ public class MainActivity extends AppCompatActivity {
         selectcat_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(Popup.getContext(), "Hiiiiii", Toast.LENGTH_SHORT).show();
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Popup.getContext(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Categories));
+                arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                selectcat_spinner.setAdapter(arrayAdapter);
             }
         });
 
@@ -269,6 +273,7 @@ public class MainActivity extends AppCompatActivity {
         }, Calendar.getInstance().get(Calendar.YEAR)
                 , Calendar.getInstance().get(Calendar.MONTH)
                 , Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+        datepicker.setCancelable(true);
         datepicker.show();
         }
     }
