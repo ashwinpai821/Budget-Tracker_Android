@@ -34,7 +34,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity{
     private Dialog dialog;
     private Button I_E;
     static String amount = "0";
+
     TextView income,expense;
     private ConstraintLayout add_amount_layout,date_layout,selectcat_layout;
     private TextView add_amount_text,date_text,selectcat_text;
@@ -162,6 +163,88 @@ public class MainActivity extends AppCompatActivity{
         dialog.show();
         Button add_button = Popup.findViewById(R.id.add_money_button);
         EditText enter_amount = Popup.findViewById(R.id.enter_amount);
+        Button add_10,add_15,add_20,add_50,add_100,add_500,add_1000,add_5000,add_10000;
+        add_10=Popup.findViewById(R.id.add_10);
+        add_10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_10=(Button)view;
+                String add_10_string = add_10.getText().toString();
+                enter_amount.setText(add_10_string);
+            }
+        });
+        add_15=Popup.findViewById(R.id.add_15);
+        add_15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_15=(Button)view;
+                String add_15_string = add_15.getText().toString();
+                enter_amount.setText(add_15_string);
+            }
+        });
+        add_20=Popup.findViewById(R.id.add_20);
+        add_20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_20=(Button)view;
+                String add_20_string = add_20.getText().toString();
+                enter_amount.setText(add_20_string);
+            }
+        });
+        add_50=Popup.findViewById(R.id.add_50);
+        add_50.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_50=(Button)view;
+                String add_50_string = add_50.getText().toString();
+                enter_amount.setText(add_50_string);
+            }
+        });
+        add_100=Popup.findViewById(R.id.add_100);
+        add_100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_100=(Button)view;
+                String add_100_string = add_100.getText().toString();
+                enter_amount.setText(add_100_string);
+            }
+        });
+        add_500=Popup.findViewById(R.id.add_500);
+        add_500.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_500=(Button)view;
+                String add_500_string = add_500.getText().toString();
+                enter_amount.setText(add_500_string);
+            }
+        });
+        add_1000=Popup.findViewById(R.id.add_1000);
+        add_1000.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_1000=(Button)view;
+                String add_1000_string = add_1000.getText().toString();
+                enter_amount.setText(add_1000_string);
+            }
+        });
+        add_5000=Popup.findViewById(R.id.add_5000);
+        add_5000.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_5000=(Button)view;
+                String add_5000_string = add_5000.getText().toString();
+                enter_amount.setText(add_5000_string);
+            }
+        });
+        add_10000=Popup.findViewById(R.id.add_10000);
+        add_10000.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button add_10000=(Button)view;
+                String add_10000_string = add_10000.getText().toString();
+                enter_amount.setText(add_10000_string);
+            }
+        });
 
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
