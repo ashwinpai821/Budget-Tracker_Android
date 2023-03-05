@@ -252,6 +252,7 @@ public class MainActivity extends AppCompatActivity {
                 Button add_10000=(Button)view;
                 String add_10000_string = add_10000.getText().toString();
                 enter_amount.setText(add_10000_string);
+                //hi
             }
         });
 
