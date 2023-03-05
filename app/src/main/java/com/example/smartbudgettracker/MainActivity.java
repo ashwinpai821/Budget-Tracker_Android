@@ -1,6 +1,7 @@
 package com.example.smartbudgettracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -33,7 +34,11 @@ import com.example.smartbudgettracker.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout add_amount_layout,date_layout,selectcat_layout;
     private TextView add_amount_text,date_text,selectcat_text;
     Spinner selectcat_spinner;
+    AppCompatButton income_expense_add_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,11 +115,15 @@ public class MainActivity extends AppCompatActivity {
          add_amount_text = Popup.findViewById(R.id.add_amount_text);
          date_layout = Popup.findViewById(R.id.date_time);
          date_text=Popup.findViewById(R.id.date_time_text);
+         income_expense_add_button=Popup.findViewById(R.id.income_expense_add_button);
+         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+         Date date = new Date();
+         dateFormat.format(date);
+         date_text.setText(dateFormat.format(date));
          selectcat_layout = Popup.findViewById(R.id.selectcat);
-//         selectcat_text=Popup.findViewById(R.id.selectcategory);
          selectcat_spinner=(Spinner) Popup.findViewById(R.id.category_spinner);
-
-
+         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Popup.getContext(), R.layout.spinner_items, getResources().getStringArray(R.array.Categories));
+         selectcat_spinner.setAdapter(arrayAdapter);
          income.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
@@ -138,21 +148,16 @@ public class MainActivity extends AppCompatActivity {
                 createAmountDialog();
             }
         });
-
         date_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createDateDialog();
             }
         });
-
-        selectcat_layout.setOnClickListener(new View.OnClickListener() {
+        income_expense_add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Popup.getContext(), "Hiiiiii", Toast.LENGTH_SHORT).show();
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Popup.getContext(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Categories));
-                arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                selectcat_spinner.setAdapter(arrayAdapter);
+
             }
         });
 
@@ -268,7 +273,17 @@ public class MainActivity extends AppCompatActivity {
         DatePickerDialog datepicker = new DatePickerDialog(this, android.R.style.Theme_DeviceDefault_Dialog, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day_of_month) {
-                date_text.setText(day_of_month + "/" + month + "/" + year + " ");
+                month++;
+                String day="0",mon="0";
+                if(day_of_month<10)
+                    day+=day_of_month;
+                else
+                    day=Integer.toString(day_of_month);
+                if(month<10)
+                    mon+=Integer.toString(month);
+                else
+                    mon =Integer.toString(month);
+                date_text.setText(day+"/"+mon+"/"+year+" ");
             }
         }, Calendar.getInstance().get(Calendar.YEAR)
                 , Calendar.getInstance().get(Calendar.MONTH)
@@ -276,4 +291,13 @@ public class MainActivity extends AppCompatActivity {
         datepicker.setCancelable(true);
         datepicker.show();
         }
+
+    // Add button/ data to database
+    public void addToDatabase(String category, String date, String amount)
+    {
+        if(this.amount.equals("0"))
+        {
+            Toast.makeText(this, "Amount not Selected!", Toast.LENGTH_SHORT).show();
+        }
     }
+}
