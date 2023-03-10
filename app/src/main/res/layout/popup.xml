@@ -81,19 +81,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:contextClickable="true"
                 />
-<!--            <TextView-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                android:id="@+id/selectcategory"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/select_category"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="25sp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                android:layout_marginStart="20dp" />-->
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+               android:id="@+id/selectcategory"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                android:text="@string/select_category" android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+               android:layout_marginStart="20dp" />
             <ImageButton
                 android:id="@+id/catgeory_icon"
                 android:layout_width="wrap_content"
